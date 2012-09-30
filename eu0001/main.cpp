@@ -4,14 +4,13 @@
 int main()
 {
 
+  std::cout<<std::endl;
 	euler* implement;
 	implement = new eu0001();
 	implement->solucion(); // time out
 	implement->printsolution();
 	delete implement;
-
-	cout<<endl<< "Porcentaje terminado: " << (double) 18/328*100;
 	
-	cout<<endl<<endl;
+  std::cout<<std::endl<<std::endl;
 	return 0;
 }
