@@ -3,7 +3,7 @@
 
 import shutil, fnmatch, os
 
-EULER_NUMBER = 2
+EULER_NUMBER = 3
 
 if EULER_NUMBER < 9:
 	EULER_NUMBER = "000"+str(EULER_NUMBER)
