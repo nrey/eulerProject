@@ -27,8 +27,11 @@ ADD_LIBRARY( euler ${EULER_HDRS} ${EULER_SRCS} )
 
 
 OPTION( BUILD_eu0001 "eu0001" ON )
-
-
 IF( BUILD_eu0001 )
   ADD_SUBDIRECTORY( eu0001 )
 ENDIF( BUILD_eu0001 )
+
+OPTION( BUILD_eu0002 "eu0002" ON )                                                                                                                                                                              
+IF( BUILD_eu0002 )
+  ADD_SUBDIRECTORY( eu0002 )
+ENDIF( BUILD_eu0002 )

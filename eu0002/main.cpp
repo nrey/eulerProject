@@ -5,12 +5,12 @@ int main()
 
   std::cout<<std::endl;
   euler* implement;
-  implement = new eu0001();
+  implement = new eu0002();
   implement->solucion(); // time out
   implement->printsolution();
   delete implement;
-  
+
   std::cout<<std::endl<<std::endl;
   return 0;
-  
+
 }

@@ -1,15 +1,15 @@
-#ifndef eu0001_h
-#define eu0001_h
+#ifndef eu0002_h
+#define eu0002_h
 
 #include"principal.h"
 
 #include"euler.h"
 
-class eu0001 : public euler{
+class eu0002 : public euler{
 
 public:
-  eu0001(){};
-  ~eu0001(){};
+  eu0002(){};
+  ~eu0002(){};
   void solucion();
   void printsolution();
 
