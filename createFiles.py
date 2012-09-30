@@ -3,7 +3,7 @@
 
 import shutil, fnmatch, os
 
-EULER_NUMBER = 3
+EULER_NUMBER = 5
 
 if EULER_NUMBER < 9:
 	EULER_NUMBER = "000"+str(EULER_NUMBER)
@@ -85,6 +85,7 @@ TEMP_FILE.write('\n')
 TEMP_FILE.write('};\n')
 TEMP_FILE.write('\n')
 TEMP_FILE.write('#endif\n')
+TEMP_FILE.close( )
 
 
 TEMP_FILE = open(NEW_DIRECTORY+'/main.cpp', 'w')
@@ -104,6 +105,7 @@ TEMP_FILE.write('  std::cout<<std::endl<<std::endl;\n')
 TEMP_FILE.write('  return 0;\n')
 TEMP_FILE.write('\n')
 TEMP_FILE.write('}\n')
+TEMP_FILE.close( )
 
 TEMP_FILE = open(NEW_DIRECTORY+'/main.h', 'w')
 TEMP_FILE.write('#ifndef main_h\n')
@@ -114,8 +116,14 @@ TEMP_FILE.write('\n')
 TEMP_FILE.write('#include\"eu'+EULER_NUMBER+'.h\"\n')
 TEMP_FILE.write('\n')
 TEMP_FILE.write('#endif\n')
+TEMP_FILE.close( )
 
 
-
+TEMP_FILE = open(CURRENT_DIRECTORY+'/CMakeLists.txt', 'a')
+TEMP_FILE.write('OPTION( BUILD_eu'+EULER_NUMBER+' \"eu'+EULER_NUMBER+'\" ON )\n')
+TEMP_FILE.write('IF( BUILD_eu'+EULER_NUMBER+' )\n')
+TEMP_FILE.write('  ADD_SUBDIRECTORY( eu'+EULER_NUMBER+' )\n')
+TEMP_FILE.write('ENDIF( BUILD_eu'+EULER_NUMBER+' )\n')
+TEMP_FILE.close( )
 
 

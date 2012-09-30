@@ -106,3 +106,24 @@ bool euler :: isprime( unsigned long long* input ){
 	}
 	return true;
 }
+
+// ################################################################################################################# //
+
+bool euler :: ispalin( unsigned long long* input ){
+
+	m_ostvar_1.str(std::string()); // Erase; For all the standard library types the member function "empty()" is a query, not a command. i.e. it means "are you empty?" not "please throw away your contents" The "clear()" member function is inherited from ios and is used to clear the error state of the stream. E.g. if a file stream has the error state set to "eofbit" (end-of-file), then calling "clear()" will set the error state back to "goodbit" (no error).
+	m_ostvar_1<<input[0];
+	m_strvar_1 = m_ostvar_1.str();
+
+	m_temp_1 = m_strvar_1.length();
+
+	for( unsigned int i=0; i<m_temp_1; i++ ){
+		if( m_strvar_1[i]!=m_strvar_1[m_temp_1-1-i] ){
+			return false;
+		}
+	}
+	return true;
+}
+
+
+
