@@ -1,20 +1,29 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import shutil, fnmatch, os
+import shutil, fnmatch, os, sys
 
-EULER_NUMBER = 5
+EULER_NUMBER = 0
+if len(sys.argv) > 1:
+  EULER_NUMBER = int(sys.argv[1])
+else:
+  sys.exit("Specify project number")
 
-if EULER_NUMBER < 9:
+#EULER_NUMBER = 5
+
+if EULER_NUMBER <= 9:
 	EULER_NUMBER = "000"+str(EULER_NUMBER)
-elif EULER_NUMBER < 99:
+elif EULER_NUMBER <= 99:
 	EULER_NUMBER = "00"+str(EULER_NUMBER)
-elif EULER_NUMBER < 999:
+elif EULER_NUMBER <= 999:
 	EULER_NUMBER = "0"+str(EULER_NUMBER)
 
 # Create directory
 CURRENT_DIRECTORY = os.getcwd()
 NEW_DIRECTORY = CURRENT_DIRECTORY+"/eu"+EULER_NUMBER
+if os.path.isdir(NEW_DIRECTORY):
+  sys.exit("Directory already exists")
+
 os.makedirs(NEW_DIRECTORY)
 
 #CMakeLists
@@ -120,10 +129,10 @@ TEMP_FILE.close( )
 
 
 TEMP_FILE = open(CURRENT_DIRECTORY+'/CMakeLists.txt', 'a')
-TEMP_FILE.write('OPTION( BUILD_eu'+EULER_NUMBER+' \"eu'+EULER_NUMBER+'\" ON )\n')
-TEMP_FILE.write('IF( BUILD_eu'+EULER_NUMBER+' )\n')
+TEMP_FILE.write('\nOPTION( BUILD_eu'+EULER_NUMBER+' \"eu'+EULER_NUMBER+'\" OFF )\n')
+TEMP_FILE.write('IF( BUILD_eu'+EULER_NUMBER+' OR BUILD_ALL )\n')
 TEMP_FILE.write('  ADD_SUBDIRECTORY( eu'+EULER_NUMBER+' )\n')
-TEMP_FILE.write('ENDIF( BUILD_eu'+EULER_NUMBER+' )\n')
+TEMP_FILE.write('ENDIF()\n')
 TEMP_FILE.close( )
 
 
