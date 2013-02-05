@@ -9,6 +9,8 @@ class test
    
 		test();
 		~test();
+    
+    test_in nic;
 };
 
 #endif

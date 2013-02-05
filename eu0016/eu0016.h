@@ -1,7 +1,7 @@
 #ifndef eu0016_h
 #define eu0016_h
 
-#include"NaiveInfinitePrecition.h"
+// #include"NaiveInfinitePrecition.h"
 #include"principal.h"
 #include"euler.h"
 

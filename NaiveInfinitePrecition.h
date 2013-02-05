@@ -8,9 +8,14 @@ class NaiveInfinitePrecition
 	public:
 
   	NaiveInfinitePrecition( ){}; 
-		NaiveInfinitePrecition( unsigned int numSize);
+		NaiveInfinitePrecition( unsigned int numSize );
 		~NaiveInfinitePrecition();
     bool setZeros();
+    bool setValue( unsigned int location, unsigned char value );
+    unsigned char getValue( unsigned int location );
+    bool mul( unsigned char value ); // Only by a small value
+    
+    unsigned long long sumDigi( ); // Only by a small value
 		
 	private:
     unsigned int m_numSize;

@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 2.4)
 PROJECT( LINKTEST )
 
 SET( LINKTEST_HDRS
-  test.h
   test_in.h
+  test.h
 )
 
 SET( LINKTEST_SRCS
+    test_in.cpp
   test.cpp
-  test_in.cpp
 )
 
 
