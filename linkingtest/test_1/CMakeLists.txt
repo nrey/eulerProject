@@ -1,0 +1,18 @@
+PROJECT( TEST_0001 )
+
+
+INCLUDE_DIRECTORIES( ${LINKTEST_SOURCE_DIR} )
+
+SET( TEST_0001_HDRS
+	test_1.h
+   )
+
+SET( TEST_0001_SRCS
+	test_1.cpp
+	main.cpp
+   )
+
+ADD_LIBRARY( test_1_LIB ${TEST_0001_SRCS} )
+
+ADD_EXECUTABLE( test_1 main.cpp  )
+TARGET_LINK_LIBRARIES( test_1 linktest test_1_LIB )
