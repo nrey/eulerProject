@@ -23,7 +23,7 @@ class euler
 		double tstart, tstop, ttime;
 		unsigned long long temp_1, temp_2, temp_3, temp_4, temp_5, temp_6, temp_7, temp_8, temp_9, temp_10;
 
-    unsigned long long *tem_1d_1; // variable de proposito general
+    unsigned long long *tem_1d_1,*tem_1d_2,*tem_1d_3; // variable de proposito general
 
     unsigned long long **tem_2d_1; // variable de proposito general
 
