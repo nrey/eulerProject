@@ -2,6 +2,7 @@
 #define euler_h
 
 #include"principal.h"
+#include"NaiveInfinitePrecition.h"
 //#include"infinite_precition.h"
 
 class euler
@@ -35,6 +36,8 @@ class euler
     ifstream myfile_read_1;
 
     ofstream myfile_writ_1;
+
+    NaiveInfinitePrecition *infi_1, *infi_2;
 
 	private:
 		unsigned long long m_temp_1, m_temp_2, m_temp_3, m_temp_4, m_temp_5, m_temp_6, m_temp_7, m_temp_8, m_temp_9, m_temp_10;

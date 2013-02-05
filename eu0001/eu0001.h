@@ -4,6 +4,7 @@
 #include"principal.h"
 
 #include"euler.h"
+//#include"test.h"
 
 class eu0001 : public euler{
 

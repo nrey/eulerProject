@@ -1,18 +1,18 @@
 
 cmake_minimum_required(VERSION 2.4)
+PROJECT( EULER )
 
 SET( EULER_HDRS
 	principal.h
-	#infinite_precition.h
+	NaiveInfinitePrecition.h
 	euler.h
 )
 
 SET( EULER_SRCS
-	#infinite_precition.cpp
+	NaiveInfinitePrecition.cpp
 	euler.cpp
 )
 
-PROJECT( EULER )
 
 set( EXE_DIR ${EULER_BINARY_DIR}/exe CACHE PATH
       "Single Directory for all executables")
@@ -100,4 +100,9 @@ ENDIF()
 OPTION( BUILD_eu0015 "eu0015" OFF )
 IF( BUILD_eu0015 OR BUILD_ALL )
   ADD_SUBDIRECTORY( eu0015 )
+ENDIF()
+
+OPTION( BUILD_eu0016 "eu0016" OFF )
+IF( BUILD_eu0016 OR BUILD_ALL )
+  ADD_SUBDIRECTORY( eu0016 )
 ENDIF()

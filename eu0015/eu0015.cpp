@@ -39,13 +39,13 @@ void eu0015 :: solucion(){
         tem_1d_1[l] +=tem_1d_3[m];
       }
     }
-  //  tem_1d_1[i-3]=tem_1d_2[i-1]/2;
+    tem_1d_1[i-3]=tem_1d_2[i-1]/2;
 
     temp_1 = 0;
-    for( unsigned long long u=1; u<=i-4; u++ ){
+    for( unsigned long long u=1; u<=i-3; u++ ){
       temp_1 += tem_1d_1[u];
     }
-    tem_1d_2[i] = 2*(i+1+tem_1d_2[i-1]+tem_1d_2[i-1]/2+temp_1);
+    tem_1d_2[i] = 2*(i+1+tem_1d_2[i-1]+temp_1);
 //    std::cout << std::endl << tem_1d_2[i-1];
   }
 
