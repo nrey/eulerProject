@@ -14,6 +14,7 @@ class NaiveInfinitePrecition
     bool setValue( unsigned int location, unsigned char value );
     unsigned char getValue( unsigned int location );
     bool mul( unsigned char value ); // Only by a small value
+    bool mulInt( long long value ); // Only by a small value
     
     unsigned long long sumDigi( ); // Only by a small value
 		

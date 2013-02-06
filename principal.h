@@ -33,4 +33,8 @@ using namespace boost;
 
 #define PI 3.14159
 
+#define MAX(a,b) (((a) > (b))?(a):(b))
+#define MIN(a,b) (((a) < (b))?(a):(b))
+#define SIGN(a)  (((a)>=0)?1:-1)
+
 #endif

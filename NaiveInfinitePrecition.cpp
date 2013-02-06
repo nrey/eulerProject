@@ -65,6 +65,34 @@ bool NaiveInfinitePrecition::mul( unsigned char value ){
 
 // ################################################################################################################# //
 
+bool NaiveInfinitePrecition::mulInt( long long value ){
+  unsigned char temp = m_num[0] * value;
+  for( unsigned int i=1; i<m_numSize; ++i ){
+    
+    if( temp >= 10 )
+    {
+//       std::cout << std::endl << int(temp/10) << " " << i;
+      m_num[i-1] = temp%10;
+      temp = m_num[i]*value+temp/10;
+      
+    }
+    else
+    {
+      m_num[i-1] = temp;
+      temp = m_num[i]*value;
+    }
+  }
+//   std::cout << std::endl << int(temp);
+  if( temp > 0 ) // Not Implemented
+  {
+    std::cout << std::endl << "\tERROR: Overflow";
+    abort();
+  }
+
+};
+
+// ################################################################################################################# //
+
 unsigned long long NaiveInfinitePrecition::sumDigi( ){
   unsigned long long temp = 0;
   for( unsigned int i=0; i<m_numSize; ++i ){
