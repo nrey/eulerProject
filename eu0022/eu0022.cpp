@@ -15,18 +15,18 @@ void eu0022 :: solucion(){
   // ---------------------------------------------------- //
 
   myfile_read_1.open("/home/nicorv/aData/9_eulerProject/eulerProject/eu0022/eu0022_data.txt");
-  myfile_read_1.setf( ios::fixed );
+  myfile_read_1.setf( std::ios::fixed );
   
   std::string tempString;
   getline( myfile_read_1, tempString );
 
-  vector < string > data;
-  istringstream ss( tempString );
+  std::vector < std::string > data;
+  std::istringstream ss( tempString );
 
   // READ TABLE
   while (myfile_read_1)
   {
-    string tempString;
+    std::string tempString;
     if (!getline( ss, tempString, ',' )) break;
     data.push_back( tempString );
 //     std::cout << "\t " << tempString;
@@ -34,7 +34,7 @@ void eu0022 :: solucion(){
 
   // FIXME check this code to create a template
   // Order string Alphabetical order
-  string nTemp;
+  std::string nTemp;
   int iCv;
   for (iCv = 1; iCv < data.size(); ++iCv)
   {

@@ -13,7 +13,7 @@ void eu0008 :: solucion(){
   //myfile_read_1.open("/home/nicorv/aData/9_eulerProject/eulerProject/eu0008/eu0008_data.txt");
   myfile_read_1.open("/home/melquiades/aLab/99_Personal/01_EulerProject/eulerProject/eu0008/eu0008_data.txt");
 
-  myfile_read_1.setf( ios::fixed );
+  myfile_read_1.setf( std::ios::fixed );
 
   char uu[2];
   myfile_read_1.get(uu, 2);

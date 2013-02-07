@@ -22,31 +22,44 @@ class euler
 		bool ispalin( unsigned long long* input );
     // Summation of all the proper numbers
     unsigned long long sumprop( unsigned long long input );
+    // Compute the factorial of a number
+    unsigned long long factorial( unsigned long long input );
+    // Test if a number is palindrome in a given base
+    bool ispalind( unsigned long long* input, unsigned long long base );
+    // Return the digits of a number
+    void digits( unsigned long long*input, unsigned long long size, unsigned long long* output );
+    unsigned long long digits( unsigned long long*input, unsigned long long* output );
+    // Get the size of a number
+    unsigned long long size( unsigned long long* input );
+    // Test if a number is pandigital
+    bool ispandigital( unsigned long long* input, unsigned long long size );
 
 
-		unsigned long long output;
+		long long output; //FIXME big change, now it has sign
 		double tstart, tstop, ttime;
-		unsigned long long temp_1, temp_2, temp_3, temp_4, temp_5, temp_6, temp_7, temp_8, temp_9, temp_10;
-
-    unsigned long long *tem_1d_1,*tem_1d_2,*tem_1d_3; // variable de proposito general
-
+    
+		unsigned long long temp_1, temp_2, temp_3, temp_4, temp_5, temp_6, temp_7, temp_8, temp_9, temp_10, temp_11, temp_12, temp_13, temp_14;
+    unsigned long long *tem_1d_1,*tem_1d_2,*tem_1d_3,*tem_1d_4,*tem_1d_5; // variable de proposito general
     unsigned long long **tem_2d_1; // variable de proposito general
-
     unsigned long long ***tem_3d_1; // variable de proposito general
 
-
+    long long temp_sig_1, temp_sig_2, temp_sig_3, temp_sig_4, temp_sig_5, temp_sig_6, temp_sig_7, temp_sig_8, temp_sig_9, temp_sig_10;
+//     unsigned long long *tem_1d_1,*tem_1d_2,*tem_1d_3,*tem_1d_4; // variable de proposito general
+//     unsigned long long **tem_2d_1; // variable de proposito general
+//     unsigned long long ***tem_3d_1; // variable de proposito general
+    
     bool flag_1, flag_2;
 
-    ifstream myfile_read_1;
+    std::ifstream myfile_read_1;
 
-    ofstream myfile_writ_1;
+    std::ofstream myfile_writ_1;
 
     NaiveInfinitePrecition *infi_1, *infi_2;
 
 	private:
 		unsigned long long m_temp_1, m_temp_2, m_temp_3, m_temp_4, m_temp_5, m_temp_6, m_temp_7, m_temp_8, m_temp_9, m_temp_10;
-		ostringstream m_ostvar_1;
-		string m_strvar_1;
+		std::ostringstream m_ostvar_1;
+		std::string m_strvar_1;
 };
 
 

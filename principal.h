@@ -16,19 +16,19 @@
 
 #include<omp.h>
 
-
-using namespace std;
+#include<vector>
+// using namespace std;
 
 
 //---------------------------------
-#include <boost/config.hpp>
+// #include <boost/config.hpp>
 #include <iostream>
 #include <fstream>
 
-#include <boost/graph/graph_traits.hpp>
-#include <boost/graph/adjacency_list.hpp>
-#include <boost/graph/dijkstra_shortest_paths_no_color_map.hpp>
-using namespace boost;
+// #include <boost/graph/graph_traits.hpp>
+// #include <boost/graph/adjacency_list.hpp>
+// #include <boost/graph/dijkstra_shortest_paths_no_color_map.hpp>
+// using namespace boost;
 //---------------------------------
 
 #define PI 3.14159

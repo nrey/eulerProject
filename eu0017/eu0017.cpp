@@ -9,7 +9,7 @@ void eu0017 :: solucion(){
 
   // ---------------------------------------------------- //
 
-  cout<<endl<<"Este lo hice en papel";
+  std::cout<<std::endl<<"Este lo hice en papel";
   
   // ---------------------------------------------------- //
   tstop = (double)clock()/CLOCKS_PER_SEC;

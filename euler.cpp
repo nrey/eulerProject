@@ -137,6 +137,115 @@ unsigned long long euler :: sumprop( unsigned long long input ){
   return m_temp_1;
 }
 
+// ################################################################################################################# //
+
+unsigned long long euler :: factorial( unsigned long long input ){
+
+  if( input == 0 ){
+    return 1;
+  }
+  m_temp_1 = 1;
+  for( unsigned long long i=1; i<=input; i++ ){
+    m_temp_1 = m_temp_1*i;
+  }
+  return m_temp_1;
+}
+
+// ################################################################################################################# //
+
+bool euler :: ispalind( unsigned long long* input, unsigned long long base ){
+
+    m_temp_1 = input[0];
+    m_temp_2 = 0;
+    while( m_temp_1>0 ){
+      m_temp_2 *= base;
+      m_temp_2 += m_temp_1%base;
+      m_temp_1 /= base;
+    }
+    if( m_temp_2 == input[0] ){
+      return true;
+    }
+    return false;
+}
+
+// ################################################################################################################# //
+
+void euler :: digits( unsigned long long*input, unsigned long long size, unsigned long long* output ){
+
+  m_temp_1 = input[0];
+  m_temp_3 = size;
+  do{
+    output[m_temp_3-1] = m_temp_1%10;
+    m_temp_3--;
+    m_temp_1 = m_temp_1/10;
+  }while(m_temp_1>0);
+}
+
+// ################################################################################################################# //
+
+unsigned long long euler :: size( unsigned long long* input ){
+
+  m_ostvar_1.str(std::string()); // Vaciamos
+  m_ostvar_1<<input[0];
+  return  m_ostvar_1.str().length();
+}
+
+// ################################################################################################################# //
+
+bool euler :: ispandigital( unsigned long long* input, unsigned long long size ){
+  m_temp_1 = 0;
+  m_temp_4 = 0;
+  for( unsigned long long i=0; i<size; i++ ){
+    m_temp_1 = m_temp_1 + input[i];
+    m_temp_4 = m_temp_4 + i+1;
+  }
+  if( m_temp_1 != m_temp_4 ){
+    return false;
+  }
+
+  for( unsigned long long i=0; i<size; i++ ){
+    m_temp_2 = 0;
+    for( unsigned long long j=0; j<size; j++ ){
+      if( input[j] == i+1 ){
+        m_temp_2 = 1;
+        break;
+      }
+    }
+    if( m_temp_2 == 0 ){
+      return false;
+    }
+  }
+  return true;
+}
+
+// ################################################################################################################# //
+
+unsigned long long euler :: digits( unsigned long long*input, unsigned long long* output ){
+
+  m_temp_1 = input[0];
+  m_ostvar_1.str(std::string()); // Vaciamos
+  m_ostvar_1<<m_temp_1;
+  m_temp_3 = m_ostvar_1.str().length();
+  m_temp_2 = m_temp_3;
+  do{
+    output[m_temp_3-1] = m_temp_1%10;
+    m_temp_3--;
+    m_temp_1 = m_temp_1/10;
+  }while(m_temp_1>0);
+
+  return m_temp_2;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

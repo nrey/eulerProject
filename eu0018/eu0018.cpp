@@ -15,7 +15,7 @@ void eu0018 :: solucion(){
   // ---------------------------------------------------- //
 
   myfile_read_1.open("/home/nicorv/aData/9_eulerProject/eulerProject/eu0018/eu0018_data.txt");
-  myfile_read_1.setf( ios::fixed );
+  myfile_read_1.setf( std::ios::fixed );
 
   for( unsigned long long i=0; i<15; i++ ){
     for( unsigned long long j=0; j<=i; j++ ){

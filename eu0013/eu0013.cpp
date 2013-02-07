@@ -11,7 +11,7 @@ void eu0013 :: solucion(){
 
   char uu[3];
   myfile_read_1.open("/home/melquiades/aLab/99_Personal/01_EulerProject/eulerProject/eu0013/eu0013_data.txt");
-  myfile_read_1.setf( ios::fixed );
+  myfile_read_1.setf( std::ios::fixed );
   temp_2 = 0;
   temp_3 = 0;
   temp_4 = 0;
