@@ -125,5 +125,49 @@ bool euler :: ispalin( unsigned long long* input ){
 	return true;
 }
 
+// ################################################################################################################# //
+
+unsigned long long euler :: sumprop( unsigned long long input ){
+  m_temp_1 = 1;
+  for( unsigned long long i=2; i<=input/2; i++ ){
+    if( input%i == 0 ){
+      m_temp_1 += i;
+    }
+  }
+  return m_temp_1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

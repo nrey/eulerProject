@@ -2,6 +2,7 @@
 #define NaiveInfinitePrecition_h
 
 #include"principal.h"
+#include "Templates.h"
 
 class NaiveInfinitePrecition
 {

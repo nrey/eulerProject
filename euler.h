@@ -4,6 +4,8 @@
 #include"principal.h"
 #include"NaiveInfinitePrecition.h"
 //#include"infinite_precition.h"
+#include "Templates.h"
+
 
 class euler
 {
@@ -18,6 +20,8 @@ class euler
 		bool isprime( unsigned long long* input );
 		// Test if a number if prime
 		bool ispalin( unsigned long long* input );
+    // Summation of all the proper numbers
+    unsigned long long sumprop( unsigned long long input );
 
 
 		unsigned long long output;
@@ -44,5 +48,7 @@ class euler
 		ostringstream m_ostvar_1;
 		string m_strvar_1;
 };
+
+
 
 #endif
