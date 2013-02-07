@@ -236,7 +236,34 @@ unsigned long long euler :: digits( unsigned long long*input, unsigned long long
   return m_temp_2;
 }
 
+// ################################################################################################################# //
 
+bool euler :: isPermuDigits( unsigned long long*input1, unsigned long long*input2, unsigned long long size ){
+
+  m_tem_1d_1 = new unsigned long long[size];
+  for( unsigned long long i=0; i<size; i++ ){ // Copia de la informacion de input2
+    m_tem_1d_1[i] = input2[i];
+  }
+  m_temp_3 = 0;
+  while( m_temp_3<size ){
+    m_temp_1 = input1[m_temp_3];
+    for( unsigned long long j=m_temp_3; j<size; j++ ){
+      if( m_temp_1 == m_tem_1d_1[j] ){
+        for( long long k=j; k>0; k-- ){
+          m_tem_1d_1[k] = m_tem_1d_1[k-1];
+        }
+        break;
+      }
+      if( j==size-1 ){ // Si en algun momento llega al maximo es porque no encontro un igual
+        delete [] m_tem_1d_1;
+        return 0;
+      }
+    }
+    m_temp_3++;
+  }
+  delete [] m_tem_1d_1;
+  return 1;
+}
 
 
 

@@ -33,6 +33,8 @@ class euler
     unsigned long long size( unsigned long long* input );
     // Test if a number is pandigital
     bool ispandigital( unsigned long long* input, unsigned long long size );
+    // FIXME dont know exactly what it does, it compares to see if they are permutations
+    bool isPermuDigits( unsigned long long*input1, unsigned long long*input2, unsigned long long size );
 
 
 		long long output; //FIXME big change, now it has sign
@@ -58,6 +60,7 @@ class euler
 
 	private:
 		unsigned long long m_temp_1, m_temp_2, m_temp_3, m_temp_4, m_temp_5, m_temp_6, m_temp_7, m_temp_8, m_temp_9, m_temp_10;
+    unsigned long long *m_tem_1d_1,*m_tem_1d_2,*m_tem_1d_3,*m_tem_1d_4,*m_tem_1d_5; // variable de proposito general
 		std::ostringstream m_ostvar_1;
 		std::string m_strvar_1;
 };
