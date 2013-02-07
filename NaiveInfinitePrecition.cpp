@@ -150,10 +150,46 @@ bool NaiveInfinitePrecition::mulInt( long long value ){
 
 // ################################################################################################################# //
 
+void NaiveInfinitePrecition::add( NaiveInfinitePrecition *rhs, NaiveInfinitePrecition *lhs ){
+  unsigned char temp_1_ = 0; // Esta es lo que llevo de cada suma
+  for( unsigned long long i=0; i<m_numSize; i++ ){
+    unsigned char temp1 = temp_1_+rhs->m_num[i]+lhs->m_num[i];
+    m_num[i] = temp1%10;
+    temp_1_ = temp1/10;
+  }
+  if( temp_1_ > 0 ) // Not Implemented
+  {
+    std::cout << std::endl << "\tERROR: Overflow";
+    abort();
+  } 
+    // Print sum
+//     std::cout << std::endl << "\t->Sum: ";
+//     for( int j=m_numSize-1; j>-1; --j ){
+//       std::cout << " " << int(m_num[j]);
+//     }
+    
+}
+
+// ################################################################################################################# //
+
 unsigned long long NaiveInfinitePrecition::sumDigi( ){
   unsigned long long temp = 0;
   for( unsigned int i=0; i<m_numSize; ++i ){
     temp += m_num[i];
+  }
+  return temp;
+};
+
+// ################################################################################################################# //
+
+unsigned long long NaiveInfinitePrecition::numDigi( ){
+  unsigned long long temp = 0;
+  for( int j=m_numSize-1; j>-1; --j ){
+    if( int(m_num[j]) > 0 ){
+      temp = j+1;
+//       std::cout << std::endl << j <<" " << int(m_num[j]);
+      break;
+    }
   }
   return temp;
 };
