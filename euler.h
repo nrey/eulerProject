@@ -35,6 +35,8 @@ class euler
     bool ispandigital( unsigned long long* input, unsigned long long size );
     // FIXME dont know exactly what it does, it compares to see if they are permutations
     bool isPermuDigits( unsigned long long*input1, unsigned long long*input2, unsigned long long size );
+    // Computes the combinatorial
+    double combinaDou( unsigned long long nnn, unsigned long long rrr);
 
 
 		long long output; //FIXME big change, now it has sign
@@ -52,15 +54,20 @@ class euler
     
     bool flag_1, flag_2;
 
+    double tedo_1,tedo_2,tedo_3,tedo_4,tedo_5,tedo_6,tedo_7,tedo_8,tedo_9,tedo_10; // variable de proposito general
+    
     std::ifstream myfile_read_1;
 
     std::ofstream myfile_writ_1;
 
-    NaiveInfinitePrecition *infi_1, *infi_2;
+    NaiveInfinitePrecition *infi_1, *infi_2, *infi_3, *infi_4, *infi_5;
 
 	private:
 		unsigned long long m_temp_1, m_temp_2, m_temp_3, m_temp_4, m_temp_5, m_temp_6, m_temp_7, m_temp_8, m_temp_9, m_temp_10;
     unsigned long long *m_tem_1d_1,*m_tem_1d_2,*m_tem_1d_3,*m_tem_1d_4,*m_tem_1d_5; // variable de proposito general
+    
+    double m_tedo_1,m_tedo_2,m_tedo_3,m_tedo_4,m_tedo_5,m_tedo_6,m_tedo_7,m_tedo_8,m_tedo_9,m_tedo_10; // variable de proposito general
+    
 		std::ostringstream m_ostvar_1;
 		std::string m_strvar_1;
 };

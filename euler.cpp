@@ -265,7 +265,22 @@ bool euler :: isPermuDigits( unsigned long long*input1, unsigned long long*input
   return 1;
 }
 
+// ################################################################################################################# //
 
+double euler :: combinaDou( unsigned long long nnn, unsigned long long rrr){
+
+  m_tedo_1 = 1;
+  m_tedo_2 = 1;
+//  tedo_3_ = rrr;
+  for( double i=nnn; i>rrr; i-- ){ // n!/r!
+    m_tedo_1 = m_tedo_1*i;
+  }
+  for( double i=nnn-rrr; i>1; i-- ){ // (n-r)!
+    m_tedo_2 = m_tedo_2*i;
+  }
+  return m_tedo_1/m_tedo_2;
+
+}
 
 
 

@@ -9,6 +9,7 @@ void eu0053 :: solucion(){
 
   // ---------------------------------------------------- //
 
+  // FIXME review this code 
   // Basicamente busca en la mitad de i (osea n) y si es mayor que 1'000000 entonces procede a calcular el siguiente menor a esa mitad
   // y asi hasta q dejen de salir mayores a 1'000000, luego si el numero n era par multiplica por dos y resta uno, y si era impar
   // solamente multiplica por dos la dantidad de numero s mayores q 1'000000

@@ -31,6 +31,31 @@ bool NaiveInfinitePrecition::setValue( unsigned int location, unsigned char valu
 
 // ################################################################################################################# //
 
+bool NaiveInfinitePrecition::setValue( unsigned long long value ){
+  this->setZeros();
+  m_temp_1 = value;
+  m_ostvar_1.str(std::string()); // Vaciamos
+  m_ostvar_1<<m_temp_1;
+  m_temp_3 = m_ostvar_1.str().length();
+  if( m_temp_3 > m_numSize ){
+    std::cout << std::endl << "size of the infinite number is to small";
+    abort();
+  }
+//   std::cout << std::endl << "Size: " << m_temp_3;
+//   /*m_temp_2*/ = m_temp_3;
+  m_temp_4 = 0;
+  do{
+    m_num[m_temp_4] = m_temp_1%10;
+    m_temp_4++;
+    m_temp_3--;
+    m_temp_1 = m_temp_1/10;
+  }while(m_temp_1>0);
+
+//   return m_temp_2;
+};
+
+// ################################################################################################################# //
+
 unsigned char NaiveInfinitePrecition::getValue( unsigned int location ){
   return m_num[location];
 };
@@ -61,6 +86,35 @@ bool NaiveInfinitePrecition::mul( unsigned char value ){
     abort();
   }
 };
+
+// ################################################################################################################# //
+
+void NaiveInfinitePrecition::mul( NaiveInfinitePrecition *rhs, unsigned char value ){
+  unsigned char temp = rhs->m_num[0] * value;
+  for( unsigned int i=1; i<m_numSize; ++i ){
+    
+    if( temp >= 10 )
+    {
+//       std::cout << std::endl << int(temp/10) << " " << i;
+      m_num[i-1] = temp%10;
+      temp = rhs->m_num[i]*value+temp/10;
+      
+    }
+    else
+    {
+      m_num[i-1] = temp;
+      temp = rhs->m_num[i]*value;
+    }
+  }
+//   std::cout << std::endl << int(temp);
+  if( temp > 0 ) // Not Implemented
+  {
+    std::cout << std::endl << "\tERROR: Overflow";
+    abort();
+  }
+  
+  
+}
 
 // ################################################################################################################# //
 
@@ -150,6 +204,55 @@ bool NaiveInfinitePrecition::mulInt( long long value ){
 
 // ################################################################################################################# //
 
+void NaiveInfinitePrecition::reverse( NaiveInfinitePrecition* lhs ){
+  lhs->setZeros();
+  m_temp_1 = this->numDigi();
+  for( unsigned long long i=0; i<m_temp_1; i++ ){
+    lhs->m_num[m_temp_1-1-i] = m_num[i];
+  }  
+  
+//   std::cout << std::endl << m_temp_1 << ":";
+//   for( unsigned long long i=0; i<m_temp_1; i++ ){
+//     std::cout << " " << int(m_num[m_temp_1-1-i]);
+//   }
+//   std::cout << " -- ";
+//   for( unsigned long long i=0; i<m_temp_1; i++ ){
+//     std::cout << " " << int(lhs->m_num[m_temp_1-1-i]);
+//   }
+}
+
+// ################################################################################################################# //
+
+bool NaiveInfinitePrecition::ispalind( ){
+  m_temp_1 = numDigi();
+  
+  m_ostvar_1.str(std::string()); // Vaciamos
+  for( long i=m_temp_1-1; i>=0; i-- ){
+    m_ostvar_1<<m_num[i];
+  }
+  m_strvar_1 = m_ostvar_1.str();
+//   temp_2_ = strvar_1_.length();
+  for( unsigned int i=0; i<m_temp_1; i++ ){
+    if( m_strvar_1[i]!=m_strvar_1[m_temp_1-1-i] ){
+      return false;
+    }
+  }
+  return true;
+  
+}
+
+// ################################################################################################################# //
+
+void NaiveInfinitePrecition::copyto( NaiveInfinitePrecition *rhs ){
+
+  for( unsigned long long i=0; i<m_numSize; i++ ){
+    rhs->m_num[i] = m_num[i];
+  }
+
+}
+
+// ################################################################################################################# //
+
 void NaiveInfinitePrecition::add( NaiveInfinitePrecition *rhs, NaiveInfinitePrecition *lhs ){
   unsigned char temp_1_ = 0; // Esta es lo que llevo de cada suma
   for( unsigned long long i=0; i<m_numSize; i++ ){
@@ -185,6 +288,7 @@ unsigned long long NaiveInfinitePrecition::sumDigi( ){
 unsigned long long NaiveInfinitePrecition::numDigi( ){
   unsigned long long temp = 0;
   for( int j=m_numSize-1; j>-1; --j ){
+//     std::cout << int(m_num[j]);
     if( int(m_num[j]) > 0 ){
       temp = j+1;
 //       std::cout << std::endl << j <<" " << int(m_num[j]);
