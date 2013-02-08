@@ -284,7 +284,34 @@ double euler :: combinaDou( unsigned long long nnn, unsigned long long rrr){
 
 
 
+// ################################################################################################################# //
 
+void euler ::descoprimos( unsigned long long numero, unsigned long long* primos_in, unsigned long long tammaxi_in, unsigned long long* primos_out, unsigned long long* multiplici_out, unsigned long long tammaxi_out /*indica el tamno del vector de salida*/, unsigned long long* tamprimo_out ){
+
+  if( numero > primos_in[tammaxi_in-1] ){ // Asumo q estan en orden ascendente
+    std::cout<<std::endl<<"La lista de primos debe ser mayor que el valor del numero. "<<numero<<" "<<primos_in[tammaxi_in-1];
+    abort();
+  }
+  m_temp_1 = numero;
+  m_temp_2 = 0; // Para ir mirando diferentes primos
+  tamprimo_out[0] = 0;
+  while( m_temp_1>1 ){
+    if( m_temp_1%primos_in[m_temp_2]==0 ){
+      if( tammaxi_out<tamprimo_out[0]+1 ){
+        std::cout<<std::endl<<"El tamano para guadar los primos de salida es muy pequeno";
+        abort();
+      }
+      primos_out[tamprimo_out[0]] = primos_in[m_temp_2]; // Primo
+      multiplici_out[tamprimo_out[0]] = 0; // Su multiplicidad inicial es 0
+      do{
+        multiplici_out[tamprimo_out[0]]++;
+        m_temp_1 = m_temp_1/primos_in[m_temp_2];
+      }while( m_temp_1%primos_in[m_temp_2]==0 );
+      tamprimo_out[0]++;
+    }
+    m_temp_2++;
+  }
+}
 
 
 

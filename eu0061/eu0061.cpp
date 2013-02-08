@@ -18,7 +18,7 @@ void eu0061 :: solucion(){
     temp_8 = i*(3*i-2);
 //    temp_1 = i*(3*i-2);
     if( (size(&temp_3)==4)||(size(&temp_4)==4)||(size(&temp_5)==4)||(size(&temp_6)==4)||(size(&temp_7)==4)||(size(&temp_8)==4) ){
-      cout<<endl<<i<<" "<<temp_3<<" "<<temp_4<<" "<<temp_5<<" "<<temp_6<<" "<<temp_7<<" "<<temp_8;
+//       cout<<endl<<i<<" "<<temp_3<<" "<<temp_4<<" "<<temp_5<<" "<<temp_6<<" "<<temp_7<<" "<<temp_8;
     }
   }
   

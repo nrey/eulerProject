@@ -1,6 +1,6 @@
-#include"eu0079.h"
+#include"eu0101.h"
 
-void eu0079 :: solucion(){
+void eu0101 :: solucion(){
   // ---------------------------------------------------- //
   tstart = (double)clock()/CLOCKS_PER_SEC;
   // ---------------------------------------------------- //
@@ -9,17 +9,14 @@ void eu0079 :: solucion(){
 
   // ---------------------------------------------------- //
 
-  // FIXME Write the code to solve this problem
-  output = 73162890; // Esto lo hice a mano, algunas claves, el 7 es el primero, y el 0 el ultimo. 
-
   // ---------------------------------------------------- //
   tstop = (double)clock()/CLOCKS_PER_SEC;
   ttime = tstop-tstart;
   // ---------------------------------------------------- //
 }
 
-void eu0079 :: printsolution(){
-  std::cout << "Euler 0079\n";
+void eu0101 :: printsolution(){
+  std::cout << "Euler 0101\n";
   std::cout << "Time: " << ttime << "\n";
   std::cout << output;
 }

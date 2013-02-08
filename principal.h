@@ -17,12 +17,11 @@
 #include<omp.h>
 
 #include<vector>
-// using namespace std;
+#include<map>
 
 
 //---------------------------------
 // #include <boost/config.hpp>
-#include <iostream>
 #include <fstream>
 
 // #include <boost/graph/graph_traits.hpp>

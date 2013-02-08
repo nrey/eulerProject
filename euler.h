@@ -37,6 +37,11 @@ class euler
     bool isPermuDigits( unsigned long long*input1, unsigned long long*input2, unsigned long long size );
     // Computes the combinatorial
     double combinaDou( unsigned long long nnn, unsigned long long rrr);
+    
+    
+    // FIXME Check 
+    void descoprimos( unsigned long long numero, unsigned long long* primos_in, unsigned long long tammaxi_in, unsigned long long* primos_out, unsigned long long* multiplici_out, unsigned long long tammaxi_out /*indica el tamno del vector de salida*/, unsigned long long* tamprimo_out );
+    
 
 
 		long long output; //FIXME big change, now it has sign
@@ -48,9 +53,9 @@ class euler
     unsigned long long ***tem_3d_1; // variable de proposito general
 
     long long temp_sig_1, temp_sig_2, temp_sig_3, temp_sig_4, temp_sig_5, temp_sig_6, temp_sig_7, temp_sig_8, temp_sig_9, temp_sig_10;
-//     unsigned long long *tem_1d_1,*tem_1d_2,*tem_1d_3,*tem_1d_4; // variable de proposito general
-//     unsigned long long **tem_2d_1; // variable de proposito general
-//     unsigned long long ***tem_3d_1; // variable de proposito general
+    long long *tem_sig_1d_1,*tem_sig_1d_2,*tem_sig_1d_3,*tem_sig_1d_4; // variable de proposito general
+    long long **tem_sig_2d_1; // variable de proposito general
+//     long long ***tem_3d_1; // variable de proposito general
     
     bool flag_1, flag_2;
 
