@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/eu0098.dir/main.o  -o ../exe/eu0098 -rdynamic ../libs/libeu0098_LIB.a ../libs/libeuler.a 

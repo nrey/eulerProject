@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../libs/libeu0090_LIB.a  CMakeFiles/eu0090_LIB.dir/eu0090.o CMakeFiles/eu0090_LIB.dir/main.o
+/usr/bin/ranlib ../libs/libeu0090_LIB.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../libs/libeu0026_LIB.a  CMakeFiles/eu0026_LIB.dir/eu0026.o CMakeFiles/eu0026_LIB.dir/main.o
+/usr/bin/ranlib ../libs/libeu0026_LIB.a

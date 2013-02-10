@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/eu0105.dir/main.o  -o ../exe/eu0105 -rdynamic ../libs/libeu0105_LIB.a ../libs/libeuler.a 

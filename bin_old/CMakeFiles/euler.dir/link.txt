@@ -1,0 +1,2 @@
+/usr/bin/ar cr libs/libeuler.a  CMakeFiles/euler.dir/NaiveInfinitePrecition.o CMakeFiles/euler.dir/euler.o
+/usr/bin/ranlib libs/libeuler.a

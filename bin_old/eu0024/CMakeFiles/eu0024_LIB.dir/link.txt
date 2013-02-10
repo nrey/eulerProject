@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../libs/libeu0024_LIB.a  CMakeFiles/eu0024_LIB.dir/eu0024.o CMakeFiles/eu0024_LIB.dir/main.o
+/usr/bin/ranlib ../libs/libeu0024_LIB.a
